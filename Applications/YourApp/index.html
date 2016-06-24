@@ -1,0 +1,102 @@
+<!--
+/*
+* ========================================================================
+* Copyright(c) 01研习社,, All Rights Reserved.
+* ========================================================================
+*
+* 【当前类文件的功能】
+*
+*
+* 作者：小占(rajan)  时间：$
+* 文件名：$
+* 版本：V1.0.0
+* 邮箱:rajan.zhan@foxmail.com
+* 修改者：           时间：
+* 修改说明：
+* ========================================================================
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./ichat.js"></script>
+</head>
+<body>
+<input id="msg">
+<button id="send">发送</button>
+<button id="login">登录</button>
+<button id="logout">注销</button>
+</body>
+<script>
+    var login_key = getLoginInfo();
+    $(function () {
+        try
+        {
+            var net  = new netClass();
+            setTimeout(function () {
+
+                //net.send({m:"Home/Index/index"});
+                net.send({});
+            },1500)
+
+            /*$("#send").click(function () {
+                var msg = $("#msg").val()?$("#msg").val():"空数据";
+                var login_key = getLoginInfo();
+                ichat.send({method:"user/getInfo",parm:{name:'rajan',pwd:'111111'}});
+            });
+
+            function getUserInfo(obj)
+            {
+                if(obj.status == 0)
+                {
+                    console.log(obj.msg);
+                }
+            }
+
+
+
+            $("#login").click(function () {
+                //ichat.login("rajan",'111111');
+                ichat.send({method:"common/login",parm:{name:'rajan',pwd:'111111'}});
+            })
+
+            $("#logout").click(function () {
+
+                ichat.send({method:"common/logout",parm:""});
+            })*/
+
+        }catch(e)
+        {
+            console.log(e.message);
+        }
+
+    })
+
+    function saveLoginInfo(data)
+    {
+        localStorage.setItem("login_key",data);
+        console.log("save login info ");
+    }
+
+    function getLoginInfo()
+    {
+        return  localStorage.getItem("login_key");
+    }
+
+    function getUserInfo(arr)
+    {
+        console.log(arr);
+    }
+    function clearLogin()
+    {
+        localStorage.removeItem("login_key");
+        console.log("clear login info ok");
+    }
+
+
+
+</script>
+</html>

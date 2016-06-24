@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="872c2c5b-9ccd-4d31-8b31-2c0d5ca91bf1" name="MyChat" url="http://01.dpas.cn">
+        <fileTransfer host="01.dpas.cn" port="2122" rootFolder="/var/www/Gateway/GatewayWorker" accessType="SFTP" password="df9fdf98df92df92df9bdf93dfc6dfdfdfc5" username="rajan">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
